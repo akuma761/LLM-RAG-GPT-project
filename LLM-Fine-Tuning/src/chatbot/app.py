@@ -137,3 +137,15 @@ async def on_message(message: cl.Message):
 
 # After generating embeddings we cache question, inquiryUsed, categoryNm, serviceNm along with generated question embeddings into OpenSearch. 
 # This is an offline activity and not updated frequently.
+# BeCA Evaluation
+# Created by Gong, Yiru, last modified on May 17, 2024
+# Evaluation Framework
+# Offline Evaluation
+
+# Query Parsing Module Evaluation
+# Ranking Module Evaluation
+# LLM Answer Evaluation
+# LLMQA
+# Online Evaluation
+
+# End-to-end Regression Test
