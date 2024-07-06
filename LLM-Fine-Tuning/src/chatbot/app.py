@@ -130,3 +130,10 @@ async def on_message(message: cl.Message):
         print(f"Caught error on on_message in app.py: {e}")
         traceback.print_exc()
         await cl.Message("An error occured while processing your query. Please try again later.").send()
+
+
+# Generate question embedding
+# In this module, we generate embeddings for Human QA'ed dataset containing (question, inquiryUsed, categoryNm, serviceNm). The embeddings are generated for frequently asked Benefit related questions. Each question has inquiryUsed, categoryNm, serviceNm fields from NLS API which were validated through NLS schema 
+
+# After generating embeddings we cache question, inquiryUsed, categoryNm, serviceNm along with generated question embeddings into OpenSearch. 
+# This is an offline activity and not updated frequently.
