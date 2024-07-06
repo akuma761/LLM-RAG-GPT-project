@@ -149,3 +149,36 @@ async def on_message(message: cl.Message):
 # Online Evaluation
 
 # End-to-end Regression Test
+
+
+# BeCA Evaluation
+# Created by Gong, Yiru, last modified on May 17, 2024
+# Evaluation Framework
+# Offline Evaluation
+
+# Query Parsing Module Evaluation
+# Ranking Module Evaluation
+# LLM Answer Evaluation
+# LLMQA
+# Online Evaluation
+
+# End-to-end Regression Test
+
+# Inferencing
+# For inferencing, smaller models can be optimised by running the inferencing in parallel on multiple GPUs, by setting device_map=auto when loading the model. For larger models which don't fit on a single GPU, there is currently no known way to improve performance over the huggingface transformers baseline.
+
+# Techniques tested:
+# Flash attention - almost 2x speedup on mistral 7b, no impact on llama2-70B. - https://huggingface.co/docs/transformers/perf_infer_gpu_one#flashattention-2
+# HuggingFace Optimum Nvidia - All optimisations here have already been merged into transformers 4.3, so no point in using this module
+# DeepSpeed MII - does not currently support LORA modules, which is how we are fine tuning models at present.
+# exllamav2 - Requires converting the model to their own format (GPTQ quantisation). Quantization level can be selected. 2.6bpw was ~2-3x faster at inference, even with a LoRA module loaded. However we need to train the LoRA module with the same quantisation using exllamav2.
+# vllm - Does not work on Carelon Jupyter Hub due to a small /dev/shm (it needs at least 1GB, while all instances are provisioned with 64MB). On KubeFlow, it does not support tensor parallelism or pipeline parallelism (splitting a large model onto multiple GPUs) when using bitsandbytes quantisation, which means it has the same limitation as exllamav2- we can load the LoRA, but the model's quantisation has changed.
+# Unsloth - Does not work on Carelon Jupyter Hub - core dump during initial import, might be due to small /dev/shm size. On Kubeflow it successfully loads the model, but inference fails due to device map issues.
+# Changing generation config: The default huggingface generation method uses greedy search, which is much faster, however it generates slightly worse answers. Generally beam search is preferred for longer answers, but a beam search with n=3 takes almost 3x longer than greedy generation.
+# This notebook demonstrates loading a model and merging the QLORA adapter, and demonstrates the greedy generation (base configuration) vs beam search Llama2 Inference (1).ipynb
+
+
+
+# Conclusions
+# The model quantisation scheme should be picked before training, based on tradeoffs during both training and inferencing. Importantly, we need to check with engineering if they can deploy the model with the same quantisation, since converting between quantisations is lossy.
+# Unsloth is currently not usable on Kubeflow or Carelon Jupyter Hub. Vllm and Exllamav2 are both usable, but have their own set of quantisations which need to be evaluated.
