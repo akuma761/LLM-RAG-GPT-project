@@ -164,6 +164,18 @@ async def on_message(message: cl.Message):
 
 # End-to-end Regression Test
 
+
+# Fine tuning
+# FDSP and DeepSpeed can be used to improve fine tuning performance. FDSP and DeepSpeed can both be used via huggingface accelerate, so training scripts that are using HuggingFace normally can directly used these techniques.
+
+# How To
+# Create a python script that loads the data and does the training. This works with normal fine tuning, or with KTO/DPO and any other techniques. Example script: kto.py
+# If the model supports it, you can also use flash attention to further improve performance
+# Run the script with 5 data samples to make sure it works as expected. Make sure the script is saving the model at the end as expected.
+# Use
+# accelerate launch --config_file recipes/accelerate_configs/deepspeed_zero3.yaml train_mistral_7b.py
+# with the final dataset to speed up using FSDP or DeepSpeed. Example configs can be found here: fsdp.yaml . This should launch the model using all GPUs as per the config file, and training should be happening in parallel. Note: this only works right now if the model is small enough to fit in a single GPU during fine tuning.
+
 # Inferencing
 # For inferencing, smaller models can be optimised by running the inferencing in parallel on multiple GPUs, by setting device_map=auto when loading the model. For larger models which don't fit on a single GPU, there is currently no known way to improve performance over the huggingface transformers baseline.
 
