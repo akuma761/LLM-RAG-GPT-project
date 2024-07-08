@@ -179,3 +179,17 @@ cd <to each directory>
 ```
 Follow the instructions provided for that specific project.
 
+graph TD;
+    Start((Start))
+    InputDetails(Input Details)
+    searchPractioners[searchPractioners API]
+    searchOrganization[searchOrganization API]
+    getContracts[getContracts API]
+    searchPractioners -->|Response: Global ID, Affiliated Key| getContracts
+    searchPractioners -->|No Response| searchOrganization
+    searchOrganization -->|Response: Global ID, Affiliated Key| getContracts
+    searchOrganization -->|No Response| End((End))
+    InputDetails -->|Input| searchPractioners
+    Start --> InputDetails
+
+
