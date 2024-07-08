@@ -1,88 +1,54 @@
-<mxfile host="app.diagrams.net" modified="2024-07-08T22:46:43.165Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36" etag="4hCWRpNSKZppC7mBEefK" version="24.6.4" type="github">
+<mxfile host="app.diagrams.net" modified="2024-07-08T23:15:13.052Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36" etag="vasI7zy29RV785TirWzS" version="24.6.4" type="github">
   <diagram name="Page-1" id="Q0_OT5iFlBCkjEAoQMfF">
-    <mxGraphModel dx="1434" dy="738" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="1700" math="0" shadow="0">
+    <mxGraphModel dx="2534" dy="738" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="1700" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="YMvvVKnGIjFAjFfc2n9P-43" value="Start" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="1">
-          <mxGeometry x="286" y="20" width="51" height="34" as="geometry" />
+        <mxCell id="YMvvVKnGIjFAjFfc2n9P-175" value="Start" style="ellipse;aspect=fixed;strokeWidth=2;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="162" y="163" width="51" height="51" as="geometry" />
         </mxCell>
-        <mxCell id="YMvvVKnGIjFAjFfc2n9P-44" value="User enters input: Organization Name, NPI, Tax ID, State, ZIP" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="1">
-          <mxGeometry x="83" y="104" width="455" height="34" as="geometry" />
+        <mxCell id="YMvvVKnGIjFAjFfc2n9P-176" value="Input Details" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="134" y="264" width="107" height="34" as="geometry" />
         </mxCell>
-        <mxCell id="YMvvVKnGIjFAjFfc2n9P-45" value="Call searchPractitioner API" style="rhombus;strokeWidth=2;whiteSpace=wrap;" vertex="1" parent="1">
-          <mxGeometry x="191" y="188" width="239" height="239" as="geometry" />
+        <mxCell id="YMvvVKnGIjFAjFfc2n9P-177" value="searchPractioners API" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="103" y="367" width="169" height="34" as="geometry" />
         </mxCell>
-        <mxCell id="YMvvVKnGIjFAjFfc2n9P-46" value="Response contains GlobalID" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="1">
-          <mxGeometry x="97" y="811" width="210" height="34" as="geometry" />
+        <mxCell id="YMvvVKnGIjFAjFfc2n9P-178" value="searchOrganization API" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="222" y="470" width="179" height="34" as="geometry" />
         </mxCell>
-        <mxCell id="YMvvVKnGIjFAjFfc2n9P-47" value="Call searchOrganization API" style="rhombus;strokeWidth=2;whiteSpace=wrap;" vertex="1" parent="1">
-          <mxGeometry x="281" y="496" width="245" height="245" as="geometry" />
+        <mxCell id="YMvvVKnGIjFAjFfc2n9P-179" value="getContracts API" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="26" y="576" width="133" height="34" as="geometry" />
         </mxCell>
-        <mxCell id="YMvvVKnGIjFAjFfc2n9P-48" value="End" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="1">
-          <mxGeometry x="290" y="1471" width="41" height="34" as="geometry" />
-        </mxCell>
-        <mxCell id="YMvvVKnGIjFAjFfc2n9P-49" value="Get Affiliated Key using GlobalID" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="1">
-          <mxGeometry x="78" y="895" width="249" height="34" as="geometry" />
-        </mxCell>
-        <mxCell id="YMvvVKnGIjFAjFfc2n9P-50" value="Call getContracts API with Affiliated Key" style="rhombus;strokeWidth=2;whiteSpace=wrap;" vertex="1" parent="1">
-          <mxGeometry x="33" y="998" width="339" height="339" as="geometry" />
-        </mxCell>
-        <mxCell id="YMvvVKnGIjFAjFfc2n9P-51" value="Response contains NetworkIDs and ContractCode" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="1">
-          <mxGeometry x="20" y="1387" width="364" height="34" as="geometry" />
-        </mxCell>
-        <mxCell id="YMvvVKnGIjFAjFfc2n9P-52" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.49;exitY=1;entryX=0.5;entryY=0;rounded=0;" edge="1" parent="1" source="YMvvVKnGIjFAjFfc2n9P-43" target="YMvvVKnGIjFAjFfc2n9P-44">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="YMvvVKnGIjFAjFfc2n9P-53" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" edge="1" parent="1" source="YMvvVKnGIjFAjFfc2n9P-44" target="YMvvVKnGIjFAjFfc2n9P-45">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="YMvvVKnGIjFAjFfc2n9P-54" value="Yes" style="curved=1;startArrow=none;endArrow=block;exitX=0.1;exitY=1;entryX=0.48;entryY=-0.01;rounded=0;" edge="1" parent="1" source="YMvvVKnGIjFAjFfc2n9P-45" target="YMvvVKnGIjFAjFfc2n9P-46">
+        <mxCell id="YMvvVKnGIjFAjFfc2n9P-181" value="Response: Global ID, Affiliated Key" style="curved=1;startArrow=none;endArrow=block;exitX=0.17;exitY=0.99;entryX=0.33;entryY=0.01;rounded=0;" edge="1" parent="1" source="YMvvVKnGIjFAjFfc2n9P-177" target="YMvvVKnGIjFAjFfc2n9P-179">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="186" y="462" />
-              <mxPoint x="186" y="776" />
+              <mxPoint x="20" y="435" />
+              <mxPoint x="20" y="538" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="YMvvVKnGIjFAjFfc2n9P-55" value="No" style="curved=1;startArrow=none;endArrow=block;exitX=0.8;exitY=1;entryX=0.5;entryY=0;rounded=0;" edge="1" parent="1" source="YMvvVKnGIjFAjFfc2n9P-45" target="YMvvVKnGIjFAjFfc2n9P-47">
+        <mxCell id="YMvvVKnGIjFAjFfc2n9P-182" value="No Response" style="curved=1;startArrow=none;endArrow=block;exitX=0.74;exitY=0.99;entryX=0.5;entryY=-0.01;rounded=0;" edge="1" parent="1" source="YMvvVKnGIjFAjFfc2n9P-177" target="YMvvVKnGIjFAjFfc2n9P-178">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="403" y="462" />
+              <mxPoint x="312" y="435" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="YMvvVKnGIjFAjFfc2n9P-56" value="Yes" style="curved=1;startArrow=none;endArrow=block;exitX=0.15;exitY=1;entryX=0.65;entryY=-0.01;rounded=0;" edge="1" parent="1" source="YMvvVKnGIjFAjFfc2n9P-47" target="YMvvVKnGIjFAjFfc2n9P-46">
+        <mxCell id="YMvvVKnGIjFAjFfc2n9P-183" value="Response: Global ID, Affiliated Key" style="curved=1;startArrow=none;endArrow=block;exitX=0.33;exitY=0.99;entryX=0.79;entryY=0.01;rounded=0;" edge="1" parent="1" source="YMvvVKnGIjFAjFfc2n9P-178" target="YMvvVKnGIjFAjFfc2n9P-179">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="295" y="776" />
+              <mxPoint x="217" y="538" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="YMvvVKnGIjFAjFfc2n9P-58" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=0.99;entryX=0.5;entryY=-0.01;rounded=0;" edge="1" parent="1" source="YMvvVKnGIjFAjFfc2n9P-46" target="YMvvVKnGIjFAjFfc2n9P-49">
+        <mxCell id="YMvvVKnGIjFAjFfc2n9P-185" value="Input" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=0.99;entryX=0.5;entryY=-0.01;rounded=0;" edge="1" parent="1" source="YMvvVKnGIjFAjFfc2n9P-176" target="YMvvVKnGIjFAjFfc2n9P-177">
           <mxGeometry relative="1" as="geometry">
             <Array as="points" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="YMvvVKnGIjFAjFfc2n9P-59" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=0.99;entryX=0.5;entryY=0;rounded=0;" edge="1" parent="1" source="YMvvVKnGIjFAjFfc2n9P-49" target="YMvvVKnGIjFAjFfc2n9P-50">
+        <mxCell id="YMvvVKnGIjFAjFfc2n9P-186" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.49;exitY=0.99;entryX=0.5;entryY=-0.01;rounded=0;" edge="1" parent="1" source="YMvvVKnGIjFAjFfc2n9P-175" target="YMvvVKnGIjFAjFfc2n9P-176">
           <mxGeometry relative="1" as="geometry">
             <Array as="points" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="YMvvVKnGIjFAjFfc2n9P-60" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=-0.01;rounded=0;" edge="1" parent="1" source="YMvvVKnGIjFAjFfc2n9P-50" target="YMvvVKnGIjFAjFfc2n9P-51">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="YMvvVKnGIjFAjFfc2n9P-61" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=0.99;entryX=0;entryY=0.25;rounded=0;" edge="1" parent="1" source="YMvvVKnGIjFAjFfc2n9P-51" target="YMvvVKnGIjFAjFfc2n9P-48">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="202" y="1446" />
-            </Array>
           </mxGeometry>
         </mxCell>
       </root>
